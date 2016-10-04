@@ -18,6 +18,10 @@ import 'es6-symbol/implement';
  * @returns {string}
  */
 export default function styleNames(styles) {
+    if(!styles || typeof styles !== 'object'){
+        return '""';
+    }
+
     let styleNames = '';
 
     for (let key of Object.keys(styles)) {
@@ -33,7 +37,7 @@ export default function styleNames(styles) {
         let conditions = styles[key];
 
         for (let value of Object.keys(conditions)) {
-            if ((typeof conditions[value] != 'function' && conditions[value]) || (typeof conditions[value] === 'function' && conditions[value]())) {
+            if ((typeof conditions[value] !== 'function' && conditions[value]) || (typeof conditions[value] === 'function' && conditions[value]())) {
                 styleNames += `${key}:${value};`;
                 break;
             }
