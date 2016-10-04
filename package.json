@@ -1,0 +1,39 @@
+{
+  "name": "stylenames",
+  "version": "1.1.3",
+  "description": "Improves usage of html inline styles in javascript.",
+  "main": "lib",
+  "jsnext:main": "src",
+  "scripts": {
+    "build": "npm run clean && npm run transpile",
+    "clean": "rimraf lib",
+    "prepublish": "npm run build",
+    "transpile": "babel src --out-dir lib"
+  },
+  "keywords": [
+    "inline-styles",
+    "styles",
+    "es6",
+    "middleware"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "rimraf": "^2.5.4"
+  },
+  "author": "Kevin Mathmann",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmathmann/stylenames.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kmathmann/stylenames/issues"
+  },
+  "homepage": "https://github.com/kmathmann/stylenames#readme",
+  "dependencies": {
+    "es6-symbol": "^3.1.0"
+  }
+}
