@@ -44,5 +44,5 @@ export default function styleNames(styles) {
         }
     }
 
-    return `"${styleNames}"`;
+    return `${styleNames}`;
 }

@@ -40,7 +40,7 @@ npm install stylenames -D
         height: '120px',
         width: '100px'
     });
-    console.log(styles1); //--> ' "height:120px;width:100px;" '
+    console.log(styles1); //--> ' height:120px;width:100px; '
   ```
        
 #####With one condition
@@ -51,7 +51,7 @@ npm install stylenames -D
             '200px': false
         }
     });
-    console.log(styles1); //--> ' "height:120px" '
+    console.log(styles1); //--> ' height:120px '
    
     let styles2 = styleNames({
         height: '120px',
@@ -59,7 +59,7 @@ npm install stylenames -D
             '200px': true
         }
     });
-    console.log(styles2); //--> ' "height:120px;width:200px;" '
+    console.log(styles2); //--> ' height:120px;width:200px; '
    ```
 #####With more than one condition
 
@@ -79,19 +79,19 @@ npm install stylenames -D
         }
     };
  
-    console.log(styleNames(styleNamesConfig)); //--> ' "display:none;height:120px;width:100px;" '
+    console.log(styleNames(styleNamesConfig)); //--> ' display:none;height:120px;width:100px; '
  
     itemCount++; //1
-    console.log(styleNames(styleNamesConfig)); //--> ' "height:120px;width:100px;" '
+    console.log(styleNames(styleNamesConfig)); //--> ' height:120px;width:100px; '
  
     itemCount++; //2
-    console.log(styleNames(styleNamesConfig)); //--> ' "height:120px;width:200px;" '
+    console.log(styleNames(styleNamesConfig)); //--> ' height:120px;width:200px; '
  
     itemCount++; //3
-    console.log(styleNames(styleNamesConfig)); //--> ' "height:120px;width:400px;" '
+    console.log(styleNames(styleNamesConfig)); //--> ' height:120px;width:400px; '
  
     itemCount += 12; //15
-    console.log(styleNames(styleNamesConfig)); //--> ' "height:120px;width:100%;" '
+    console.log(styleNames(styleNamesConfig)); //--> ' height:120px;width:100%; '
 
 ```
  
