@@ -1,9 +1,0 @@
-{
-  "presets": [
-    "stage-0",
-    "latest"
-  ],
-  "plugins": [
-    "add-module-exports"
-  ]
-}

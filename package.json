@@ -5,6 +5,7 @@
   "main": "lib",
   "jsnext:main": "src",
   "scripts": {
+    "test": "jest",
     "build": "npm run clean && npm run transpile",
     "clean": "rimraf lib",
     "prepublish": "npm run build",
@@ -17,11 +18,10 @@
     "middleware"
   ],
   "devDependencies": {
-    "babel-cli": "^6.16.0",
-    "babel-core": "^6.17.0",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-latest": "^6.16.0",
-    "babel-preset-stage-0": "^6.16.0",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "jest": "^26.0.1",
     "rimraf": "^2.5.4"
   },
   "author": "Kevin Mathmann",
