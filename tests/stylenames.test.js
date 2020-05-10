@@ -8,15 +8,15 @@ test('returns empty string when not called with an object', () => {
   expect(styleNames(123)).toBe('');
 });
 
-// new feature that might be nice, skip for now
-test.skip('works with string values', () => {
+test('works with string values', () => {
   expect(styleNames({
     height: '120px',
     width: '100px'
   })).toBe('height:120px;width:100px;');
 });
 
-test('works with multiple rules under 1 toggle', () => {
+// new feature that might be nice, skip for now
+test.skip('works with multiple rules under 1 toggle', () => {
   expect(styleNames({
     'height:120px;width:100px': true
   })).toBe('height:120px;width:100px;');
