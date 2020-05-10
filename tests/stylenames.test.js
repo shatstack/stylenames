@@ -20,7 +20,7 @@ test('works with multiple rules under 1 toggle', () => {
   expect(styleNames({
     'height:120px;width:100px': true
   })).toBe('height:120px;width:100px;');
-})
+});
 
 test('works with a single true condition', () => {
   expect(styleNames({
@@ -37,8 +37,8 @@ test('works with a single false condition', () => {
     width: {
       '200px': true
     }
-  })).toBe('height:120px;width:200px;')
-})
+  })).toBe('height:120px;width:200px;');
+});
 
 test('works with more than one condition & with function conditionals', () => {
 
