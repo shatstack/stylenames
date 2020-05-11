@@ -1,5 +1,6 @@
-![test](https://github.com/shatstack/stylenames/workflows/test/badge.svg)
+![build](https://github.com/shatstack/stylenames/workflows/build/badge.svg)
 ![npm version](https://img.shields.io/npm/v/@shat/stylenames)
+![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@shat/stylenames)
 
 # @shat/stylenames
 
