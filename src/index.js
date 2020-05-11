@@ -1,5 +1,3 @@
-import 'es6-symbol/implement';
-
 /**
  * Convert Object to CSS style String.
  *
@@ -18,31 +16,38 @@ import 'es6-symbol/implement';
  * @returns {string}
  */
 export default function styleNames(styles) {
-    if(!styles || typeof styles !== 'object'){
-        return '';
+  if (!styles || typeof styles !== 'object') {
+    return '';
+  }
+
+  let styleNames = '';
+
+  for (const key of Object.keys(styles)) {
+    if (typeof styles[key] === 'string') {
+      styleNames += `${key}:${styles[key]};`;
+      continue;
     }
 
-    let styleNames = '';
-
-    for (let key of Object.keys(styles)) {
-        if (typeof styles[key] === 'string') {
-            styleNames += `${key}:${styles[key]};`;
-            continue;
-        }
-
-        if (typeof styles[key] !== 'object' || styles[key].length === 0) {
-            continue;
-        }
-
-        let conditions = styles[key];
-
-        for (let value of Object.keys(conditions)) {
-            if ((typeof conditions[value] !== 'function' && conditions[value]) || (typeof conditions[value] === 'function' && conditions[value]())) {
-                styleNames += `${key}:${value};`;
-                break;
-            }
-        }
+    if (typeof styles[key] !== 'object' || styles[key].length === 0) {
+      continue;
     }
 
-    return `${styleNames}`;
+    const conditions = styles[key];
+
+    for (const value of Object.keys(conditions)) {
+      if (
+        (typeof conditions[value] !== 'function' && conditions[value]) ||
+        (typeof conditions[value] === 'function' && conditions[value]())
+      ) {
+        styleNames += `${key}:${value};`;
+        break;
+      }
+    }
+  }
+
+  return `${styleNames}`;
+}
+
+if (window) {
+  window.styleNames = styleNames;
 }

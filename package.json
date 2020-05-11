@@ -1,40 +1,56 @@
 {
   "name": "stylenames",
   "version": "1.1.6",
-  "description": "Improves usage of html inline styles in javascript.",
-  "main": "lib",
-  "jsnext:main": "src",
+  "description": "A simple JavaScript utility for conditionally joining inline styles together",
+  "source": "src/index.js",
+  "jsnext:main": "src/index.js",
+  "main": "lib/index.js",
+  "module": "lib/stylenames.module.js",
+  "unpkg": "lib/stylenames.umd.js",
   "scripts": {
     "test": "jest",
-    "build": "npm run clean && npm run transpile",
+    "lint": "xo src tests",
+    "format": "xo src tests --fix",
+    "build": "npm run clean && microbundle",
     "clean": "rimraf lib",
-    "prepublish": "npm run build",
-    "transpile": "babel src --out-dir lib"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "inline-styles",
     "styles",
-    "es6",
-    "middleware"
+    "css",
+    "classname",
+    "classnames",
+    "util",
+    "alpinejs",
+    "alpinejs-styles"
   ],
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "jest": "^26.0.1",
-    "rimraf": "^2.5.4"
+    "microbundle": "^0.12.0",
+    "rimraf": "^2.5.4",
+    "xo": "^0.30.0"
+  },
+  "xo": {
+    "prettier": true,
+    "space": true,
+    "globals": [
+      "window",
+      "expect",
+      "test"
+    ]
   },
   "author": "Kevin Mathmann",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kmathmann/stylenames.git"
+    "url": "git+https://github.com/shatstack/stylenames.git"
   },
   "bugs": {
-    "url": "https://github.com/kmathmann/stylenames/issues"
+    "url": "https://github.com/shatstack/stylenames/issues"
   },
-  "homepage": "https://github.com/kmathmann/stylenames#readme",
-  "dependencies": {
-    "es6-symbol": "^3.1.0"
-  }
+  "homepage": "https://github.com/shatstack/stylenames#readme"
 }
