@@ -1,11 +1,32 @@
 const styleNames = require('../lib/index.umd');
 
+test('quickstart example', () => {
+  expect(
+    styleNames({
+      backgroundColor: 'red',
+      width: '120px',
+
+      height: {
+        // If the condition is false the style does not becomes used.
+        '200px': false,
+        // Only the first value with true condition becomes used.
+        '300px': true,
+        '400px': true
+      }
+    })
+  ).toBe('background-color:red;width:120px;height:300px;');
+});
+
 test('returns empty string when called with nothing', () => {
   expect(styleNames()).toBe('');
 });
 
 test('returns empty string when not called with an object', () => {
   expect(styleNames(123)).toBe('');
+});
+
+test('works with JS stylenames', () => {
+  expect(styleNames({backgroundColor: 'red'})).toBe('background-color:red;');
 });
 
 test('works with string values', () => {
