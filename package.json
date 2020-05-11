@@ -1,6 +1,6 @@
 {
   "name": "@shat/stylenames",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "A simple JavaScript utility for conditionally joining inline styles together",
   "source": "src/index.js",
   "jsnext:main": "lib/index.module.js",
