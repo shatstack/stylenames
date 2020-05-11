@@ -1,19 +1,20 @@
 {
-  "name": "stylenames",
+  "name": "@shat/stylenames",
   "version": "1.1.6",
   "description": "A simple JavaScript utility for conditionally joining inline styles together",
   "source": "src/index.js",
   "jsnext:main": "src/index.js",
   "main": "lib/index.js",
-  "module": "lib/stylenames.module.js",
-  "unpkg": "lib/stylenames.umd.js",
+  "module": "lib/index.module.js",
+  "unpkg": "lib/index.umd.js",
   "scripts": {
     "test": "jest",
     "lint": "xo src tests",
     "format": "xo src tests --fix",
     "build": "npm run clean && microbundle",
     "clean": "rimraf lib",
-    "prepublish": "npm run build"
+    "prerelease": "npm run build",
+    "release": "np"
   },
   "keywords": [
     "inline-styles",
@@ -26,11 +27,9 @@
     "alpinejs-styles"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
     "jest": "^26.0.1",
     "microbundle": "^0.12.0",
+    "np": "^6.2.3",
     "rimraf": "^2.5.4",
     "xo": "^0.30.0"
   },

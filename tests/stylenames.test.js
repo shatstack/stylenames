@@ -1,4 +1,4 @@
-import styleNames from '../src';
+const styleNames = require('../lib/index.umd');
 
 test('returns empty string when called with nothing', () => {
   expect(styleNames()).toBe('');
