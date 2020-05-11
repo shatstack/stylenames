@@ -1,5 +1,5 @@
 /**
- * Convert Object to CSS style String.
+ * Convert Object to CSS style string.
  *
  *   Example:
  *      {
@@ -10,7 +10,7 @@
  *              "40px": true
  *          },
  *      }
- *      returns: '"height:20px;width:30px;"'
+ *      returns: "height:20px;width:30px;"
  *
  * @param {object|Array} styles - style rules
  * @returns {string}
@@ -54,7 +54,20 @@ export default function styleNames(styles) {
     }
   }
 
-  return `${styleNames}`;
+  return kebabCase(styleNames);
+}
+
+/**
+ * Convert string from camel/snake case to kebab case. Borrowed from Alpine.js utils.
+ *
+ * @param {string} subject - subject to kebab
+ * @returns {string}
+ */
+function kebabCase(subject) {
+  return subject
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/[_\s]/, '-')
+    .toLowerCase();
 }
 
 if (window) {

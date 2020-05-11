@@ -31,40 +31,36 @@ import styleNames from '@shat/stylenames';
 ```
 
 
-#### stylenames object
+## Quick Start
 
 ```javascript
 styleNames({
-    'style-key':'style-value',
+    backgroundColor: 'red',
+    width: '120px',
     
-    // If the condition is false the style does not becomes used.
-    'style-key':{
-        'style-value': condition
+    'height':{
+        // If the condition is false the style does not becomes used.
+        '200px': false,
+        // Only the first value with true condition becomes used.
+        '300px': true,
+        '400px': true
     },
-                
-    // Only the first value with true condition becomes used.
-    'style-key':{
-        'style-value1': condition,
-        'style-value2': condition,
-        'style-value3': condition,
-            ...
-    }
 });
 ```
 
-### Examples
+## Examples
 
-##### Without conditions
+### Without conditions
 
 ```javascript
 let styles1 = styleNames({
     height: '120px',
     width: '100px'
 });
-console.log(styles1); //--> ' height:120px;width:100px; '
+console.log(styles1); //--> 'height:120px;width:100px;'
 ```
        
-##### With one condition using a boolean toggle
+### With one condition using a boolean toggle
 
 ```javascript
 let styles1 = styleNames({
@@ -73,7 +69,7 @@ let styles1 = styleNames({
         '200px': false
     }
 });
-console.log(styles1); //--> ' height:120px '
+console.log(styles1); //--> 'height:120px '
 
 let styles2 = styleNames({
     height: '120px',
@@ -81,9 +77,33 @@ let styles2 = styleNames({
         '200px': true
     }
 });
-console.log(styles2); //--> ' height:120px;width:200px; '
+console.log(styles2); //--> 'height:120px;width:200px;'
 ```
-##### With more than one condition using a function toggle
+
+### With multiple rules with 1 boolean toggle
+
+```js
+const styles = styleNames({
+    'height:120px;width:100px;': true
+});
+console.log(styles); //--> 'height:120px;width:100px;'
+```
+
+### With camelcased rules
+
+```js
+const styles = styleNames({backgroundColor: 'red'});
+console.log(styles); //--> 'background-color:red;'
+```
+
+### With array input
+
+```js
+const styles = styleNames(['height:120px', 'width:100px']);
+console.log(styles); //--> 'height:120px;width:100px;'
+```
+
+### With more than one condition using a function toggle
 
 ```javascript
 let itemCount = 0;
@@ -101,19 +121,19 @@ let styleNamesConfig = {
     }
 };
 
-console.log(styleNames(styleNamesConfig)); //--> ' display:none;height:120px;width:100px; '
+console.log(styleNames(styleNamesConfig)); //--> 'display:none;height:120px;width:100px;'
 
 itemCount++; //1
-console.log(styleNames(styleNamesConfig)); //--> ' height:120px;width:100px; '
+console.log(styleNames(styleNamesConfig)); //--> 'height:120px;width:100px;'
 
 itemCount++; //2
-console.log(styleNames(styleNamesConfig)); //--> ' height:120px;width:200px; '
+console.log(styleNames(styleNamesConfig)); //--> 'height:120px;width:200px;'
 
 itemCount++; //3
-console.log(styleNames(styleNamesConfig)); //--> ' height:120px;width:400px; '
+console.log(styleNames(styleNamesConfig)); //--> 'height:120px;width:400px;'
 
 itemCount += 12; //15
-console.log(styleNames(styleNamesConfig)); //--> ' height:120px;width:100%; '
+console.log(styleNames(styleNamesConfig)); //--> 'height:120px;width:100%;'
 ```
 
 ## Contributing
