@@ -12,14 +12,14 @@ import 'es6-symbol/implement';
  *              "40px": true
  *          }
  *      }
- *      returns: ' "height:20px;width:30px;" '
+ *      returns: '"height:20px;width:30px;"'
  *
- * @param styles
+ * @param {object} styles - style rules
  * @returns {string}
  */
 export default function styleNames(styles) {
     if(!styles || typeof styles !== 'object'){
-        return '""';
+        return '';
     }
 
     let styleNames = '';
