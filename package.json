@@ -3,7 +3,7 @@
   "version": "1.1.6",
   "description": "A simple JavaScript utility for conditionally joining inline styles together",
   "source": "src/index.js",
-  "jsnext:main": "src/index.js",
+  "jsnext:main": "lib/index.module.js",
   "main": "lib/index.js",
   "module": "lib/index.module.js",
   "unpkg": "lib/index.umd.js",
@@ -45,6 +45,10 @@
   },
   "author": "Kevin Mathmann",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shatstack/stylenames.git"

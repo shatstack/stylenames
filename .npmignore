@@ -13,3 +13,7 @@ node_modules
 .gitignore
 webpack.production.babel.js
 
+tests
+.dependabot
+.github
+src
