@@ -10,23 +10,21 @@ In one short sentence: "stylenames" converts an object to a css style string."
 
 Think [classNames](https://www.npmjs.com/package/classnames) but for inline styles.
 
-#### Install
+## Install
 
-Install with npm, or Yarn:
-
-npm:
-
-```sh
-npm install @shat/stylenames --save
+**From CDN:** Add the following script to the end of your `<head>` section.
+```html
+<script src="https://cdn.jsdelivr.net/npm/@shat/stylenames@v1.x.x/lib/index.umd.js"></script>
 ```
 
-Yarn (note that yarn add automatically saves the package to the dependencies in package.json):
+That's it. It will initialize itself.
 
-```
-yarn add @shat/stylenames
+**From NPM:** Install the package from NPM.
+```js
+npm install @shat/stylenames
 ```
 
-#### Import
+Include it in your script.
 
 ```javascript
 import styleNames from '@shat/stylenames';
