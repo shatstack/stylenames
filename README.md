@@ -17,7 +17,7 @@ Think [classNames](https://www.npmjs.com/package/classnames) but for inline styl
 <script src="https://cdn.jsdelivr.net/npm/@shat/stylenames@v1.x.x/lib/index.umd.js"></script>
 ```
 
-That's it. It will initialize itself.
+That's it. It will initialize itself as `styleNames()`.
 
 **From NPM:** Install the package from NPM.
 ```js
@@ -39,9 +39,9 @@ styleNames({
     width: '120px',
     
     'height':{
-        // If the condition is false the style does not becomes used.
+        // If the condition is false the style does not get used.
         '200px': false,
-        // Only the first value with true condition becomes used.
+        // Only the first value with true condition is used.
         '300px': true,
         '400px': true
     },
