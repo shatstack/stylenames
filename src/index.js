@@ -8,11 +8,11 @@
  *              "20px": false,
  *              "30px": true,
  *              "40px": true
- *          }
+ *          },
  *      }
  *      returns: '"height:20px;width:30px;"'
  *
- * @param {object} styles - style rules
+ * @param {object|Array} styles - style rules
  * @returns {string}
  */
 export default function styleNames(styles) {
@@ -20,15 +20,24 @@ export default function styleNames(styles) {
     return '';
   }
 
-  let styleNames = '';
+  if (Array.isArray(styles)) {
+    return styles.join(';') + ';';
+  }
 
+  let styleNames = '';
   for (const key of Object.keys(styles)) {
-    if (typeof styles[key] === 'string') {
-      styleNames += `${key}:${styles[key]};`;
+    const value = styles[key];
+    if (typeof value === 'string') {
+      styleNames += `${key}:${value};`;
       continue;
     }
 
-    if (typeof styles[key] !== 'object' || styles[key].length === 0) {
+    if (typeof value === 'boolean') {
+      styleNames += key;
+      continue;
+    }
+
+    if (typeof value !== 'object' || value.length === 0) {
       continue;
     }
 

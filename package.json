@@ -8,6 +8,7 @@
   "module": "lib/index.module.js",
   "unpkg": "lib/index.umd.js",
   "scripts": {
+    "pretest": "microbundle",
     "test": "jest",
     "lint": "xo src tests",
     "format": "xo src tests --fix",

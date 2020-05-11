@@ -17,13 +17,18 @@ test('works with string values', () => {
   ).toBe('height:120px;width:100px;');
 });
 
-// New feature that might be nice, skip for now
-test.skip('works with multiple rules under 1 toggle', () => {
+test('works with multiple rules under 1 toggle', () => {
   expect(
     styleNames({
-      'height:120px;width:100px': true
+      'height:120px;width:100px;': true
     })
   ).toBe('height:120px;width:100px;');
+});
+
+test('works with arrays', () => {
+  expect(styleNames(['height:120px', 'width:100px'])).toBe(
+    'height:120px;width:100px;'
+  );
 });
 
 test('works with a single true condition', () => {
