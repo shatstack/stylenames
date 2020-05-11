@@ -1,6 +1,8 @@
 ## @shat/stylenames
 
-> This is a fork of the unmaintained stylenames package
+A simple JavaScript utility for conditionally joining inline styles together.
+
+> This is a fork of the unmaintained [stylenames](https://github.com/kmathmann/stylenames) package
 
 #### What does stylenames do?
 
@@ -15,19 +17,19 @@ Install with npm, or Yarn:
 npm:
 
 ```sh
-npm install classnames --save
+npm install @shat/stylenames --save
 ```
 
 Yarn (note that yarn add automatically saves the package to the dependencies in package.json):
 
 ```
-yarn add classnames
+yarn add @shat/stylenames
 ```
 
 #### Import
 
 ```javascript
-import styleNames from 'stylenames';
+import styleNames from '@shat/stylenames';
 ```
 
 
@@ -143,4 +145,4 @@ Code is licensed under the [MIT License](./LICENSE).
 
 ## Acknowledgments
 
-Kevin Mathmann for building stylenames which this is a fork of.
+Kevin Mathmann for building [stylenames](https://github.com/kmathmann/stylenames) which this is a fork of.
