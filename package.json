@@ -18,6 +18,7 @@
     "release": "np"
   },
   "keywords": [
+    "stylenames",
     "inline-styles",
     "styles",
     "css",
