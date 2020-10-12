@@ -5,11 +5,5 @@ updates:
   schedule:
     interval: daily
   open-pull-requests-limit: 10
-  directory: "."
-  default_assignees:
-    # update to your username :party:
+  reviewers:
     - "HugoDF"
-  automerged_updates:
-    - match:
-      dependency_type: "all"
-      update_type: "all"
