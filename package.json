@@ -10,6 +10,7 @@
   "scripts": {
     "pretest": "microbundle",
     "test": "jest",
+    "watch": "microbundle watch",
     "lint": "xo src tests",
     "format": "xo src tests --fix",
     "build": "npm run clean && microbundle",
