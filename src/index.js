@@ -27,13 +27,14 @@ export default function styleNames(styles) {
   let styleNames = '';
   for (const key of Object.keys(styles)) {
     const value = styles[key];
+    const cssPropertyName = kebabCase(key);
     if (typeof value === 'string') {
-      styleNames += `${key}:${value};`;
+      styleNames += `${cssPropertyName}:${value};`;
       continue;
     }
 
     if (typeof value === 'boolean') {
-      styleNames += key;
+      styleNames += cssPropertyName;
       continue;
     }
 
@@ -48,13 +49,12 @@ export default function styleNames(styles) {
         (typeof conditions[value] !== 'function' && conditions[value]) ||
         (typeof conditions[value] === 'function' && conditions[value]())
       ) {
-        styleNames += `${key}:${value};`;
+        styleNames += `${cssPropertyName}:${value};`;
         break;
       }
     }
   }
-
-  return kebabCase(styleNames);
+  return styleNames;
 }
 
 /**

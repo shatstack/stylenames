@@ -102,3 +102,7 @@ test('works with more than one condition & with function conditionals', () => {
   itemCount += 12; // 15
   expect(styleNames(styleNamesConfig)).toBe('height:120px;width:100%;');
 });
+
+test('respects whitespace in value', () => {
+  expect(styleNames({ height: `calc( 100% - 90px )` })).toBe('height:calc( 100% - 90px );');
+})
