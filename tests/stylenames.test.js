@@ -104,5 +104,7 @@ test('works with more than one condition & with function conditionals', () => {
 });
 
 test('respects whitespace in value', () => {
-  expect(styleNames({ height: `calc( 100% - 90px )` })).toBe('height:calc( 100% - 90px );');
-})
+  expect(styleNames({height: `calc( 100% - 90px )`})).toBe(
+    'height:calc( 100% - 90px );'
+  );
+});

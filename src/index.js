@@ -54,6 +54,7 @@ export default function styleNames(styles) {
       }
     }
   }
+
   return styleNames;
 }
 
